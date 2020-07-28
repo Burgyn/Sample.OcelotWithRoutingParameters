@@ -1,0 +1,45 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/{companyId}/api/invoices/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5100
+        }
+      ],
+      "UpstreamPathTemplate": "/{companyId}/api/invoices/{everything}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "invoicing"
+    },
+    {
+      "DownstreamPathTemplate": "/{companyId}/api/invoices",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5100
+        }
+      ],
+      "UpstreamPathTemplate": "/{companyId}/api/invoices",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "invoicing"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "invoicing",
+      "Config": [
+        {
+          "Name": "Invoicing API",
+          "Version": "v1",
+          "Url": "http://localhost:5100/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost"
+  }
+}
